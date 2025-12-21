@@ -17,6 +17,11 @@ html,
   height: 100%;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 ol,
 ul {
   list-style: none;

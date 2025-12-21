@@ -1,9 +1,5 @@
-function App() {
-  return (
-    <>
-      <h1>Posts App</h1>
-    </>
-  );
-}
+import { MainLayout } from '@shared/layouts/MainLayout';
 
-export default App;
+export const App = () => {
+  return <MainLayout />;
+};
