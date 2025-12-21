@@ -1,13 +1,14 @@
 .container {
   padding: 40px;
-  background-color: white;
+  background-color: var(--background);
   border-radius: 12px;
 }
 
 .title {
   margin-bottom: 12px;
+  color: var(--foreground);
 }
 
 .description {
-  color: rgba(0, 0, 0, 0.696);
+  color: var(--muted-foreground);
 }

@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from '@features/ThemeSwitcher';
 import { Button } from '@shared/ui/Button';
 import { AboutProject, Modal } from '@shared/ui/Modal';
 import { useState } from 'react';
@@ -12,7 +13,12 @@ export const Header = () => {
       <div className="container">
         <div className={styles.content}>
           <p>Posts App Header</p>
-          <Button onClick={() => setOpen(true)}>About Project</Button>
+
+          <div className={styles.buttons}>
+            <ThemeSwitcher />
+
+            <Button onClick={() => setOpen(true)}>About Project</Button>
+          </div>
 
           <Modal isOpen={open} onClose={() => setOpen(false)}>
             <AboutProject />
