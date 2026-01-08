@@ -1,0 +1,22 @@
+.header {
+  padding: 20px;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+
+  p {
+    color: var(--foreground);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
