@@ -1,6 +1,6 @@
 import { ThemeSwitcher } from '@features/ThemeSwitcher';
 import { Button } from '@shared/ui/Button';
-import { AboutProject, Modal } from '@shared/ui/Modal';
+import { Modal } from '@shared/ui/Modal';
 import { useState } from 'react';
 
 import styles from './Header.module.scss';
@@ -21,7 +21,11 @@ export const Header = () => {
           </div>
 
           <Modal isOpen={open} onClose={() => setOpen(false)}>
-            <AboutProject />
+            <Modal.Header>About project</Modal.Header>
+            <Modal.Body>
+              This is a React + TypeScript + Vite application for viewing posts and comments.
+            </Modal.Body>
+            <Modal.Footer>Footer dslkfj slkdjf lskdjf</Modal.Footer>
           </Modal>
         </div>
       </div>

@@ -12,6 +12,29 @@
 
 .content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   justify-content: center;
+
+  padding: 40px;
+  background-color: var(--secondary);
+  border-radius: 12px;
+}
+
+.header {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--foreground);
+}
+
+.body {
+  font-weight: bold;
+  color: var(--muted-foreground);
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted-foreground);
 }
