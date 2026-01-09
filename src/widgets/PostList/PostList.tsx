@@ -6,7 +6,8 @@ import styles from './PostList.module.scss';
 interface Post {
   id: number;
   title: string;
-  description: string;
+  body: string;
+  userId: number;
 }
 
 interface PostListProps {
@@ -19,7 +20,7 @@ export const PostList = ({ posts }: PostListProps) => {
       <div className={styles.container}>
         <div className={styles.posts}>
           {posts.map((post) => (
-            <PostCard key={post.id} title={post.title} description={post.description} />
+            <PostCard key={post.id} id={post.id} title={post.title} body={post.body} />
           ))}
         </div>
       </div>

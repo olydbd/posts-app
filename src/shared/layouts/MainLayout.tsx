@@ -6,20 +6,20 @@ const posts = [
   {
     id: 1,
     title: 'Monkey D. Luffy',
-    description:
-      'The captain of the Straw Hat Pirates. A rubber man who dreams of becoming the Pirate King and values freedom and his crew above all else.',
+    body: 'The captain of the Straw Hat Pirates. A rubber man who dreams of becoming the Pirate King and values freedom and his crew above all else.',
+    userId: 1,
   },
   {
     id: 2,
     title: 'Roronoa Zoro',
-    description:
-      'The first mate of the Straw Hat Pirates and a master swordsman who uses three swords. His goal is to become the world’s greatest swordsman.',
+    body: 'The first mate of the Straw Hat Pirates and a master swordsman who uses three swords. His goal is to become the world`s greatest swordsman.',
+    userId: 1,
   },
   {
     id: 3,
     title: 'Vinsmoke Sanji',
-    description:
-      'The cook of the Straw Hat Pirates. He fights using only his legs and dreams of finding the legendary All Blue.',
+    body: 'The cook of the Straw Hat Pirates. He fights using only his legs and dreams of finding the legendary All Blue.',
+    userId: 1,
   },
 ];
 
