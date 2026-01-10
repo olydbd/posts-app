@@ -1,9 +1,10 @@
 import { CommentList } from '@widgets/CommentList';
+import { memo } from 'react';
 
 import type { Post } from '../model/types';
 import styles from './PostCard.module.scss';
 
-export const PostCard = ({ id, title, body }: Post) => {
+export const PostCard = memo(function PostCard({ id, title, body }: Post) {
   return (
     <article className={styles.card}>
       <h3 className={styles.title}>{title}</h3>
@@ -11,4 +12,4 @@ export const PostCard = ({ id, title, body }: Post) => {
       <CommentList postId={id} />
     </article>
   );
-};
+});
