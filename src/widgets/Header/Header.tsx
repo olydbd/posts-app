@@ -12,7 +12,7 @@ export const Header = () => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.content}>
-          <p>Posts App Header</p>
+          <p className={styles.logo}>Posts App Header</p>
 
           <div className={styles.buttons}>
             <ThemeSwitcher />
@@ -25,7 +25,6 @@ export const Header = () => {
             <Modal.Body>
               This is a React + TypeScript + Vite application for viewing posts and comments.
             </Modal.Body>
-            <Modal.Footer>Footer dslkfj slkdjf lskdjf</Modal.Footer>
           </Modal>
         </div>
       </div>
