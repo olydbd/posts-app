@@ -36,7 +36,7 @@ const comments = [
     id: 5,
     name: 'Sanji',
     email: 'sanji@mugiwara.pirates',
-    body: "A cook feeds people—pirate, marine, rich, poor. If you're hungry, you eat.",
+    body: "A cook feeds people - pirate, marine, rich, poor. If you're hungry, you eat.",
   },
   {
     postId: 3,
