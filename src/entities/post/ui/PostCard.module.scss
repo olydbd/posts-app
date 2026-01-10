@@ -1,14 +1,15 @@
 .card {
+  flex: 1;
   border-radius: 12px;
   padding: 16px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
 
-  h3 {
+  .title {
     color: var(--foreground);
   }
 
-  p {
+  .description {
     color: var(--muted-foreground);
   }
 }

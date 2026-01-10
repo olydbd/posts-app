@@ -1,40 +1,26 @@
-import { PostCard } from '@entities/post';
+import { type Post, PostCard } from '@entities/post';
+import { withLoading } from '@shared/lib/hoc/withLoading';
 
 import styles from './PostList.module.scss';
 
-const posts = [
-  {
-    id: 1,
-    title: 'Monkey D. Luffy',
-    description:
-      'The captain of the Straw Hat Pirates. A rubber man who dreams of becoming the Pirate King and values freedom and his crew above all else.',
-  },
-  {
-    id: 2,
-    title: 'Roronoa Zoro',
-    description:
-      'The first mate of the Straw Hat Pirates and a master swordsman who uses three swords. His goal is to become the world’s greatest swordsman.',
-  },
-  {
-    id: 3,
-    title: 'Vinsmoke Sanji',
-    description:
-      'The cook of the Straw Hat Pirates. He fights using only his legs and dreams of finding the legendary All Blue.',
-  },
-];
+interface PostListProps {
+  posts: Post[];
+}
 
-export const PostList = () => {
+export const PostList = ({ posts }: PostListProps) => {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.posts}>
-          {posts.map((post) => (
-            <PostCard key={post.id} title={post.title} description={post.description} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className={styles.posts}>
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          id={post.id}
+          title={post.title}
+          body={post.body}
+          userId={post.userId}
+        />
+      ))}
+    </div>
   );
 };
 
-export default PostList;
+export const PostListWithLoading = withLoading(PostList);

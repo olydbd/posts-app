@@ -1,15 +1,15 @@
+import { CommentList } from '@widgets/CommentList';
+import { memo } from 'react';
+
+import type { Post } from '../model/types';
 import styles from './PostCard.module.scss';
 
-interface PostCardProps {
-  title: string;
-  description: string;
-}
-
-export const PostCard = ({ title, description }: PostCardProps) => {
+export const PostCard = memo(function PostCard({ id, title, body }: Post) {
   return (
     <article className={styles.card}>
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{body}</p>
+      <CommentList postId={id} />
     </article>
   );
-};
+});

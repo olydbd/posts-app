@@ -25,3 +25,19 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     document.body,
   );
 };
+
+const ModalHeader = ({ children }: { children: ReactNode }) => {
+  return <div className={styles.header}>{children}</div>;
+};
+
+const ModalBody = ({ children }: { children: ReactNode }) => {
+  return <div className={styles.body}>{children}</div>;
+};
+
+const ModalFooter = ({ children }: { children: ReactNode }) => {
+  return <div className={styles.footer}>{children}</div>;
+};
+
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;
+Modal.Footer = ModalFooter;
