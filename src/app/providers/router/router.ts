@@ -1,6 +1,7 @@
 import { AlbumDetails } from '@pages/AlbumDetails';
 import { ALbumPhotos } from '@pages/AlbumPhotos';
 import { Albums } from '@pages/Albums';
+import { NotFound } from '@pages/NotFound';
 import { PostDetails } from '@pages/PostDetails';
 import { Posts } from '@pages/Posts';
 import { UserAlbums } from '@pages/UserAlbums';
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
             Component: ALbumPhotos,
           },
         ],
+      },
+      {
+        path: '*',
+        Component: NotFound,
       },
     ],
   },
