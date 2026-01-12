@@ -4,6 +4,11 @@
   padding: 16px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+  }
 
   .title {
     color: var(--foreground);
