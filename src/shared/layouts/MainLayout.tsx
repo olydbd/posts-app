@@ -1,14 +1,12 @@
 import { Footer } from '@widgets/Footer';
 import { Header } from '@widgets/Header';
-import { PostList } from '@widgets/PostList';
+import type { ReactNode } from 'react';
 
-export const MainLayout = () => {
+export const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
-      <main>
-        <PostList />
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );
