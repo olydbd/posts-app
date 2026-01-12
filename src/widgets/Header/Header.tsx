@@ -1,6 +1,7 @@
 import { ThemeSwitcher } from '@features/ThemeSwitcher';
 import { Button } from '@shared/ui/Button';
 import { Modal } from '@shared/ui/Modal';
+import { UserTabs } from '@widgets/UserTabs';
 import { useState } from 'react';
 
 import styles from './Header.module.scss';
@@ -13,6 +14,8 @@ export const Header = () => {
       <div className="container">
         <div className={styles.content}>
           <p className={styles.logo}>Posts App Header</p>
+
+          <UserTabs />
 
           <div className={styles.buttons}>
             <ThemeSwitcher />
