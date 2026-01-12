@@ -1,7 +1,7 @@
 import { AlbumDetails } from '@pages/AlbumDetails';
 import { ALbumPhotos } from '@pages/AlbumPhotos';
 import { Albums } from '@pages/Albums';
-import { PostDetails } from '@pages/PostDetails/ui/PostDetails';
+import { PostDetails } from '@pages/PostDetails';
 import { Posts } from '@pages/Posts';
 import { UserAlbums } from '@pages/UserAlbums';
 import { UserDetails } from '@pages/UserDetails';
