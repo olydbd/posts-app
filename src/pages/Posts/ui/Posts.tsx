@@ -2,8 +2,9 @@ import type { Post } from '@entities/post';
 import { PostLengthFilter } from '@features/PostLengthFilter';
 import { PostListWithLoading } from '@widgets/PostList';
 import { useState } from 'react';
+import { Outlet } from 'react-router';
 
-import styles from './MainPage.module.scss';
+import styles from './Posts.module.scss';
 
 const posts: Post[] = [
   {
@@ -26,7 +27,7 @@ const posts: Post[] = [
   },
 ];
 
-export const MainPage = () => {
+export const Posts = () => {
   const [filteredPosts, setFilteredPosts] = useState(posts);
 
   return (
@@ -35,6 +36,7 @@ export const MainPage = () => {
         <PostLengthFilter posts={posts} onFiltered={setFilteredPosts} />
         <PostListWithLoading isLoading={false} posts={filteredPosts} />
       </div>
+      <Outlet />
     </section>
   );
 };
