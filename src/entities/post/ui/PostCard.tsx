@@ -1,7 +1,7 @@
+import type { Post } from '@features/PostList';
 import { CommentList } from '@widgets/CommentList';
 import { memo } from 'react';
 
-import type { Post } from '../model/types';
 import styles from './PostCard.module.scss';
 
 export const PostCard = memo(function PostCard({ id, title, body }: Post) {

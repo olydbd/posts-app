@@ -1,4 +1,5 @@
-import { type Post, PostCard } from '@entities/post';
+import { PostCard } from '@entities/post';
+import type { Post } from '@features/PostList';
 import { withLoading } from '@shared/lib/hoc/withLoading';
 
 import styles from './PostList.module.scss';
