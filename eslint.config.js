@@ -29,6 +29,7 @@ export default defineConfig([
       'no-console': ['error', { allow: ['error'] }],
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      '@typescript-eslint/no-invalid-void-type': 0,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
     },
