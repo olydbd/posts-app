@@ -1,8 +1,5 @@
 .posts {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  gap: 10px;
+  flex-direction: column;
+  gap: 16px;
 }

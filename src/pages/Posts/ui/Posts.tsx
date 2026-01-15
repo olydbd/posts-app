@@ -17,6 +17,7 @@ export const Posts = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        <h2 className={styles.title}>Posts</h2>
         <PostLengthFilter posts={posts} onFiltered={setFilteredPosts} />
         <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
       </div>

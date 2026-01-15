@@ -12,13 +12,7 @@ export const PostList = ({ posts }: PostListProps) => {
   return (
     <div className={styles.posts}>
       {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          body={post.body}
-          userId={post.userId}
-        />
+        <PostCard key={post.id} {...post} />
       ))}
     </div>
   );
