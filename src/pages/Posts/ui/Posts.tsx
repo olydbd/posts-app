@@ -1,5 +1,6 @@
+import type { Post } from '@entities/post';
 import { PostLengthFilter } from '@features/PostLengthFilter';
-import { type Post, usePosts } from '@features/PostList';
+import { usePosts } from '@features/PostList';
 import { PostListWithLoading } from '@widgets/PostList';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router';

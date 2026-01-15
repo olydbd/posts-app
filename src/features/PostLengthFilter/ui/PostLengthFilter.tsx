@@ -1,4 +1,4 @@
-import type { Post } from '@features/PostList';
+import type { Post } from '@entities/post';
 import { type ChangeEvent, useState } from 'react';
 
 import { filterByLength } from '../lib/filterByLength';
