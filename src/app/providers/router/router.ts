@@ -40,18 +40,20 @@ export const router = createBrowserRouter([
           {
             path: ':id',
             Component: UserDetails,
-          },
-          {
-            path: ':id/albums',
-            Component: UserAlbums,
-          },
-          {
-            path: ':id/todos',
-            Component: UserTodos,
-          },
-          {
-            path: ':id/posts',
-            Component: UserPosts,
+            children: [
+              {
+                path: 'albums',
+                Component: UserAlbums,
+              },
+              {
+                path: 'todos',
+                Component: UserTodos,
+              },
+              {
+                path: 'posts',
+                Component: UserPosts,
+              },
+            ],
           },
         ],
       },

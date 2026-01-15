@@ -1,6 +1,6 @@
 import { useGetUserByIdQuery } from '@entities/user';
 import { skipToken } from '@reduxjs/toolkit/query/react';
-import { Link, useParams } from 'react-router';
+import { Link, Outlet, useParams } from 'react-router';
 
 import styles from './UserDetails.module.scss';
 
@@ -70,6 +70,10 @@ export const UserDetails = () => {
           <Link to={`/users/${user.id}/todos`} className={styles.action}>
             View todos
           </Link>
+        </div>
+
+        <div className={styles.outlet}>
+          <Outlet />
         </div>
       </div>
     </section>
