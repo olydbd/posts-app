@@ -1,0 +1,44 @@
+.card {
+  display: block;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.username {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  margin-bottom: 12px;
+}
+
+.info {
+  font-size: 14px;
+  line-height: 1.5;
+
+  p {
+    margin: 4px 0;
+  }
+
+  span {
+    font-weight: bold;
+    color: var(--foreground);
+  }
+}
