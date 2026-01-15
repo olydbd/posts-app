@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 import type { User } from '../model/types';
 import styles from './UserCard.module.scss';
 
-export const UserCard = ({ name, username, email, phone, website }: User) => {
+export const UserCard = ({ id, name, username, email, phone, website }: User) => {
   return (
-    <Link to="/" className={styles.card}>
+    <Link to={`/users/${id}`} className={styles.card}>
       <h3 className={styles.name}>{name}</h3>
 
       <p className={styles.username}>@{username}</p>
