@@ -1,4 +1,3 @@
-import { AlbumDetails } from '@pages/AlbumDetails';
 import { ALbumPhotos } from '@pages/AlbumPhotos';
 import { Albums } from '@pages/Albums';
 import { NotFound } from '@pages/NotFound';
@@ -62,10 +61,6 @@ export const router = createBrowserRouter([
           {
             index: true,
             Component: Albums,
-          },
-          {
-            path: ':id',
-            Component: AlbumDetails,
           },
           {
             path: ':id/photos',
