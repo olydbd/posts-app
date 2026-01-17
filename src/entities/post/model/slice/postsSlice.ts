@@ -17,6 +17,9 @@ const postsSlice = createSlice({
     builder.addMatcher(postsApi.endpoints.getPosts.matchFulfilled, (state, { payload }) => {
       postsAdapter.setAll(state, payload);
     });
+    builder.addMatcher(postsApi.endpoints.addPost.matchFulfilled, (state, { payload }) => {
+      postsAdapter.addOne(state, payload);
+    });
   },
 });
 
