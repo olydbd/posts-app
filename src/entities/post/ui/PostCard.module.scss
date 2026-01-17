@@ -1,7 +1,7 @@
 .card {
-  flex: 1;
-  border-radius: 12px;
   padding: 16px;
+  border-radius: 12px;
+  background-color: var(--background);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.3s ease-in-out;
@@ -9,22 +9,24 @@
   &:hover {
     box-shadow: var(--shadow-lg);
   }
+}
 
-  .link {
-    color: var(--foreground);
+.title {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--foreground);
+  text-decoration: none;
+
+  &:hover {
     text-decoration: underline;
-    transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: var(--accent-foreground);
-    }
   }
+}
 
-  .title {
-    color: var(--foreground);
-  }
-
-  .description {
-    color: var(--muted-foreground);
-  }
+.body {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin-bottom: 12px;
 }

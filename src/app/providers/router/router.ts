@@ -1,4 +1,3 @@
-import { AlbumDetails } from '@pages/AlbumDetails';
 import { ALbumPhotos } from '@pages/AlbumPhotos';
 import { Albums } from '@pages/Albums';
 import { NotFound } from '@pages/NotFound';
@@ -10,12 +9,14 @@ import { UserPosts } from '@pages/UserPosts';
 import { Users } from '@pages/Users';
 import { UserTodos } from '@pages/UserTodos';
 import { MainLayout } from '@shared/layouts/MainLayout';
+import { Fallback } from '@shared/ui/Fallback';
 import { createBrowserRouter } from 'react-router';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     Component: MainLayout,
+    ErrorBoundary: Fallback,
     children: [
       {
         index: true,
@@ -41,18 +42,20 @@ export const router = createBrowserRouter([
           {
             path: ':id',
             Component: UserDetails,
-          },
-          {
-            path: ':id/albums',
-            Component: UserAlbums,
-          },
-          {
-            path: ':id/todos',
-            Component: UserTodos,
-          },
-          {
-            path: ':id/posts',
-            Component: UserPosts,
+            children: [
+              {
+                path: 'albums',
+                Component: UserAlbums,
+              },
+              {
+                path: 'todos',
+                Component: UserTodos,
+              },
+              {
+                path: 'posts',
+                Component: UserPosts,
+              },
+            ],
           },
         ],
       },
@@ -62,10 +65,6 @@ export const router = createBrowserRouter([
           {
             index: true,
             Component: Albums,
-          },
-          {
-            path: ':id',
-            Component: AlbumDetails,
           },
           {
             path: ':id/photos',

@@ -1,3 +1,51 @@
+.section {
+  padding: 20px;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .title {
   color: var(--foreground);
+}
+
+.photoCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  text-decoration: none;
+  color: var(--foreground);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-foreground);
+  }
 }

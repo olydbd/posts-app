@@ -1,5 +1,14 @@
 .button {
-  margin: 16px 0;
+  font-size: 13px;
+  color: var(--primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .container {

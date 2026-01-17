@@ -1,5 +1,6 @@
+import type { Post } from '@entities/post';
 import { PostLengthFilter } from '@features/PostLengthFilter';
-import { type Post, usePosts } from '@features/PostList';
+import { usePosts } from '@features/PostList';
 import { PostListWithLoading } from '@widgets/PostList';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
@@ -17,6 +18,7 @@ export const Posts = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        <h2 className={styles.title}>Posts</h2>
         <PostLengthFilter posts={posts} onFiltered={setFilteredPosts} />
         <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
       </div>

@@ -1,5 +1,4 @@
-import { PostCard } from '@entities/post';
-import type { Post } from '@features/PostList';
+import { type Post, PostCard } from '@entities/post';
 import { withLoading } from '@shared/lib/hoc/withLoading';
 
 import styles from './PostList.module.scss';
@@ -12,13 +11,7 @@ export const PostList = ({ posts }: PostListProps) => {
   return (
     <div className={styles.posts}>
       {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          body={post.body}
-          userId={post.userId}
-        />
+        <PostCard key={post.id} {...post} />
       ))}
     </div>
   );
