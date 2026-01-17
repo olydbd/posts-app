@@ -9,12 +9,14 @@ import { UserPosts } from '@pages/UserPosts';
 import { Users } from '@pages/Users';
 import { UserTodos } from '@pages/UserTodos';
 import { MainLayout } from '@shared/layouts/MainLayout';
+import { Fallback } from '@shared/ui/Fallback';
 import { createBrowserRouter } from 'react-router';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     Component: MainLayout,
+    ErrorBoundary: Fallback,
     children: [
       {
         index: true,
