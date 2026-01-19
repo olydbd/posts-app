@@ -1,0 +1,25 @@
+.themeButton {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: transparent;
+  color: var(--foreground);
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+.themeIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--foreground);
+}

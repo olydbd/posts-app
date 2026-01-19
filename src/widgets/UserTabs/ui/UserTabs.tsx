@@ -1,7 +1,14 @@
+import { FileText, ImageIcon, Users } from 'lucide-react';
 import { NavLink } from 'react-router';
 
-import { navLinks } from '../model/navLinks';
+import type { NavLinkItem } from '../model/types';
 import styles from './UserTabs.module.scss';
+
+const navLinks: NavLinkItem[] = [
+  { to: '/posts', label: 'Posts', icon: <FileText className={styles.navIcon} /> },
+  { to: '/users', label: 'Users', icon: <Users className={styles.navIcon} /> },
+  { to: '/albums', label: 'Albums', icon: <ImageIcon className={styles.navIcon} /> },
+];
 
 export const UserTabs = () => {
   return (
@@ -12,6 +19,7 @@ export const UserTabs = () => {
           to={link.to}
           className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
         >
+          {link.icon}
           {link.label}
         </NavLink>
       ))}

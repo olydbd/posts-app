@@ -2,6 +2,7 @@ import { ThemeSwitcher } from '@features/ThemeSwitcher';
 import { Button } from '@shared/ui/Button';
 import { Modal } from '@shared/ui/Modal';
 import { UserTabs } from '@widgets/UserTabs';
+import { Flower2, Info } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router';
 
@@ -15,15 +16,23 @@ export const Header = () => {
       <div className="container">
         <div className={styles.content}>
           <Link to="/" className={styles.logo}>
-            Posts App
+            <div className={styles.logoIcon}>
+              <Flower2 className={styles.logoIconSvg} />
+            </div>
+            <span className={styles.logoText}>Blossom</span>
           </Link>
 
-          <UserTabs />
+          <nav>
+            <UserTabs />
+          </nav>
 
           <div className={styles.buttons}>
             <ThemeSwitcher />
 
-            <Button onClick={() => setOpen(true)}>About Project</Button>
+            <Button className={styles.aboutButton} onClick={() => setOpen(true)}>
+              <Info className={styles.aboutButtonIcon} />
+              About Project
+            </Button>
           </div>
 
           <Modal isOpen={open} onClose={() => setOpen(false)}>

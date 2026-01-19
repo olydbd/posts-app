@@ -3,14 +3,14 @@
   align-items: center;
   justify-content: center;
   padding: 8px 20px;
-  border-radius: 8px;
+  border-radius: 100px;
   background-color: var(--primary);
   color: var(--primary-foreground);
   border: none;
   cursor: pointer;
-  transition: 0.2s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .button:hover {
-  background-color: var(--muted-foreground);
+  background-color: var(--accent);
 }
