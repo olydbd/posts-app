@@ -2,6 +2,7 @@ import type { Post } from '@entities/post';
 import { PostLengthFilter } from '@features/PostLengthFilter';
 import { usePosts } from '@features/PostList';
 import { PostListWithLoading } from '@widgets/PostList';
+import { Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
 
@@ -18,9 +19,22 @@ export const Posts = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Posts</h2>
-        <PostLengthFilter posts={posts} onFiltered={setFilteredPosts} />
-        <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
+        <div className={styles.header}>
+          <div className={styles.badge}>
+            <Sparkles className={styles.badgeIcon} />
+            Welcome to the community
+          </div>
+          <h1 className={styles.title}>Share Your Thoughts</h1>
+          <p className={styles.subtitle}>
+            Join our vibrant community of thinkers, creators, and dreamers. Explore posts, share
+            ideas, and connect with like-minded people.
+          </p>
+        </div>
+
+        <div className={styles.posts}>
+          <PostLengthFilter posts={posts} onFiltered={setFilteredPosts} />
+          <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
+        </div>
       </div>
       <Outlet />
     </section>

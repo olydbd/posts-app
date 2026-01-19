@@ -1,13 +1,62 @@
 .section {
-  padding: 20px;
   background-color: var(--background);
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 32px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.badgeIcon {
+  width: 16px;
+  height: 16px;
 }
 
 .title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
   color: var(--foreground);
+  margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 40px;
+  }
+}
+
+.subtitle {
+  max-width: 640px;
+  margin: 16px auto 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+
+.posts {
+  max-width: 640px;
+  margin: 0 auto;
 }

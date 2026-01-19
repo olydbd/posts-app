@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   padding: 20px;
-  background-color: rgba(var(--background), 0.8);
+  background-color: var(--card-80);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
