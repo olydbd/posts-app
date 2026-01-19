@@ -32,7 +32,11 @@ export const Posts = () => {
         </div>
 
         <div className={styles.posts}>
-          <PostLengthFilter posts={posts} onFiltered={setFilteredPosts} />
+          <PostLengthFilter
+            posts={posts}
+            filteredPosts={filteredPosts}
+            onFiltered={setFilteredPosts}
+          />
           <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
         </div>
       </div>
