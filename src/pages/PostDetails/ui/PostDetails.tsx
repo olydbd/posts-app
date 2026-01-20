@@ -1,3 +1,4 @@
+import { useGetCommentsByPostIdQuery } from '@entities/comment';
 import { useGetPostByIdQuery } from '@entities/post';
 import { skipToken } from '@reduxjs/toolkit/query/react';
 import { CommentList } from '@widgets/CommentList';
@@ -8,6 +9,7 @@ import styles from './PostDetails.module.scss';
 export const PostDetails = () => {
   const { id } = useParams();
   const { data: post, isError, isLoading } = useGetPostByIdQuery(id ?? skipToken);
+  const { data: comments } = useGetCommentsByPostIdQuery(id ?? skipToken);
   const navigate = useNavigate();
 
   const handleClose = () => {
@@ -23,7 +25,7 @@ export const PostDetails = () => {
           <>
             <h2 className={styles.title}>{post.title}</h2>
             <p className={styles.body}>{post.body}</p>
-            <CommentList postId={post.id} />
+            <CommentList comments={comments} />
           </>
         )}
         <span className={styles.close} onClick={handleClose}>

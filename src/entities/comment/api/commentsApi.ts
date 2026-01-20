@@ -14,4 +14,4 @@ export const commentsApi = createApi({
   }),
 });
 
-export const { useLazyGetCommentsByPostIdQuery } = commentsApi;
+export const { useGetCommentsByPostIdQuery } = commentsApi;

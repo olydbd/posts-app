@@ -1,42 +1,54 @@
-import { useLazyGetCommentsByPostIdQuery } from '@entities/comment';
-import { useState } from 'react';
+import type { Comment } from '@entities/comment';
+import { User } from 'lucide-react';
 
 import styles from './CommentList.module.scss';
 
 interface CommentListProps {
-  postId: number;
+  comments?: Comment[];
 }
 
-export const CommentList = ({ postId }: CommentListProps) => {
-  const [open, setOpen] = useState(false);
-
-  const [getComments, { data: comments, isLoading }] = useLazyGetCommentsByPostIdQuery();
-
-  const handleToggleComments = () => {
-    setOpen((o) => !o);
-    getComments(postId);
-  };
+export const CommentList = ({ comments }: CommentListProps) => {
+  if (comments?.length === 0) {
+    return <p className={styles.empty}>No comments yet. Be the first to comment!</p>;
+  }
 
   return (
-    <div>
-      <button type="button" onClick={handleToggleComments} className={styles.button}>
-        {open ? 'Close comments' : 'Open comments'}
-      </button>
-
-      <div className={`${styles.container} ${open ? styles.open : ''}`}>
-        {isLoading && <p>Loading...</p>}
-        {comments && (
-          <div className={styles.scroll}>
-            {comments.map((comment) => (
-              <div key={comment.id} className={styles.content}>
+    <>
+      {comments &&
+        comments.map((comment) => (
+          <div key={comment.id} className={styles.comment}>
+            <div className={styles.header}>
+              <div className={styles.avatar}>
+                <User className={styles.avatarIcon} />
+              </div>
+              <div className={styles.info}>
                 <p className={styles.name}>{comment.name}</p>
                 <p className={styles.email}>{comment.email}</p>
-                <p className={styles.body}>{comment.body}</p>
               </div>
-            ))}
+            </div>
+            <p className={styles.content}>{comment.body}</p>
           </div>
-        )}
-      </div>
-    </div>
+        ))}
+    </>
+    // <div>
+    //   <button type="button" onClick={handleToggleComments} className={styles.button}>
+    //     {open ? 'Close comments' : 'Open comments'}
+    //   </button>
+
+    //   <div className={`${styles.container} ${open ? styles.open : ''}`}>
+    //     {isLoading && <p>Loading...</p>}
+    //     {comments && (
+    //       <div className={styles.scroll}>
+    //         {comments.map((comment) => (
+    //           <div key={comment.id} className={styles.content}>
+    //             <p className={styles.name}>{comment.name}</p>
+    //             <p className={styles.email}>{comment.email}</p>
+    //             <p className={styles.body}>{comment.body}</p>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     )}
+    //   </div>
+    // </div>
   );
 };
