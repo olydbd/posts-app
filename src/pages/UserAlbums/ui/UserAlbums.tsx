@@ -15,7 +15,7 @@ export const UserAlbums = () => {
   return (
     <div className={styles.albums}>
       {albums.map((album) => (
-        <AlbumCard key={album.id} id={album.id} title={album.title} />
+        <AlbumCard key={album.id} album={album} />
       ))}
     </div>
   );
