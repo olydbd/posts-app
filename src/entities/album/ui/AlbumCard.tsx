@@ -28,7 +28,7 @@ export const AlbumCard = ({ album }: AlbumCardProps) => {
           </div>
 
           <div className={styles.body}>
-            <h3 className={styles.title}>Album №{id}</h3>
+            <h3 className={styles.title}>Album № {id}</h3>
             <p className={styles.description}>{title}</p>
           </div>
 
