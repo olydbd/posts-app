@@ -1,6 +1,19 @@
 import { useGetUserByIdQuery } from '@entities/user';
 import { skipToken } from '@reduxjs/toolkit/query/react';
-import { Link, Outlet, useParams } from 'react-router';
+import {
+  ArrowLeft,
+  Briefcase,
+  Building2,
+  CheckSquare,
+  FileText,
+  Globe,
+  ImageIcon,
+  Mail,
+  MapPin,
+  Phone,
+  User,
+} from 'lucide-react';
+import { Link, NavLink, Outlet, useParams } from 'react-router';
 
 import styles from './UserDetails.module.scss';
 
@@ -19,58 +32,121 @@ export const UserDetails = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.name}>{user.name}</h2>
-          <p className={styles.username}>@{user.username}</p>
-          <p className={styles.email}>{user.email}</p>
-        </div>
+        <Link to="/users" className={styles.backLink}>
+          <ArrowLeft />
+          Back to Users
+        </Link>
 
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>Contact</h3>
-            <p>
-              <span>Phone:</span> {user.phone}
-            </p>
-            <p>
-              <span>Website:</span> {user.website}
-            </p>
+        <article className={styles.card}>
+          <div className={styles.cover} />
+
+          <div className={styles.content}>
+            <header className={styles.header}>
+              <div className={styles.avatar}>
+                <User />
+              </div>
+
+              <div className={styles.nameBlock}>
+                <h3 className={styles.name}>{user.name}</h3>
+                <p className={styles.username}>@{user.username}</p>
+              </div>
+
+              <button type="button" className={styles.follow}>
+                Follow
+              </button>
+            </header>
+
+            <section className={styles.contacts}>
+              <div className={styles.contact}>
+                <div className={styles.icon}>
+                  <Mail />
+                </div>
+                <div>
+                  <p className={styles.label}>Email</p>
+                  <p className={styles.value}>{user.email}</p>
+                </div>
+              </div>
+
+              <div className={styles.contact}>
+                <div className={styles.icon}>
+                  <Phone />
+                </div>
+                <div>
+                  <p className={styles.label}>Phone</p>
+                  <p className={styles.value}>{user.phone}</p>
+                </div>
+              </div>
+
+              <div className={styles.contact}>
+                <div className={styles.icon}>
+                  <Globe />
+                </div>
+                <div>
+                  <p className={styles.label}>Website</p>
+                  <a href="#" className={styles.link}>
+                    {user.website}
+                  </a>
+                </div>
+              </div>
+
+              <div className={styles.contact}>
+                <div className={styles.icon}>
+                  <MapPin />
+                </div>
+                <div>
+                  <p className={styles.label}>Address</p>
+                  <p className={styles.value}>
+                    {user.address.street}, {user.address.city}
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className={styles.company}>
+              <h4 className={styles.companyTitle}>
+                <Building2 />
+                Company
+              </h4>
+
+              <div className={styles.companyItem}>
+                <Briefcase />
+                <p>{user.company.name}</p>
+              </div>
+
+              <p className={styles.companyQuote}>“{user.company.catchPhrase}”</p>
+
+              <p className={styles.companyBs}>
+                <span>Specializing in:</span> {user.company.bs}
+              </p>
+            </section>
           </div>
+        </article>
 
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>Address</h3>
-            <p>{user.address.street}</p>
-            <p>{user.address.suite}</p>
-            <p>
-              {user.address.city}, {user.address.zipcode}
-            </p>
-            <p className={styles.geo}>
-              Lat: {user.address.geo.lat}, Lng: {user.address.geo.lng}
-            </p>
-          </div>
+        <nav className={styles.tabs}>
+          <NavLink
+            to={`/users/${user.id}/posts`}
+            className={({ isActive }) => (isActive ? styles.tabActive : styles.tab)}
+          >
+            <FileText className={styles.tabIcon} />
+            Posts
+          </NavLink>
 
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>Company</h3>
-            <p>
-              <span>Name:</span> {user.company.name}
-            </p>
-            <p className={styles.muted}>{user.company.catchPhrase}</p>
-            <p className={styles.muted}>{user.company.bs}</p>
-          </div>
-        </div>
+          <NavLink
+            to={`/users/${user.id}/albums`}
+            className={({ isActive }) => (isActive ? styles.tabActive : styles.tab)}
+          >
+            <ImageIcon className={styles.tabIcon} />
+            Albums
+          </NavLink>
 
-        <div className={styles.actions}>
-          <Link to={`/users/${user.id}/posts`} className={styles.action}>
-            View posts
-          </Link>
-
-          <Link to={`/users/${user.id}/albums`} className={styles.action}>
-            View albums
-          </Link>
-
-          <Link to={`/users/${user.id}/todos`} className={styles.action}>
-            View todos
-          </Link>
-        </div>
+          <NavLink
+            to={`/users/${user.id}/todos`}
+            className={({ isActive }) => (isActive ? styles.tabActive : styles.tab)}
+          >
+            <CheckSquare className={styles.tabIcon} />
+            Todos
+          </NavLink>
+        </nav>
 
         <div className={styles.outlet}>
           <Outlet />
