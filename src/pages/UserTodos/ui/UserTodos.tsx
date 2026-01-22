@@ -8,9 +8,24 @@ export const UserTodos = () => {
   const { id } = useParams();
   const { data: todos, isError, isLoading } = useGetTodosByUserIdQuery(id ?? skipToken);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError || !todos) return <p>Error</p>;
-  if (todos.length === 0) return <p>No todos found.</p>;
+  if (isLoading)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Loading todos...</p>
+      </div>
+    );
+  if (isError || !todos)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Error</p>
+      </div>
+    );
+  if (todos.length === 0)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>No todos found</p>
+      </div>
+    );
 
   return (
     <div className={styles.todos}>

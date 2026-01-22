@@ -1,3 +1,14 @@
+.state {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--muted-foreground);
+
+  .stateText {
+    font-size: 14px;
+  }
+}
+
 .todos {
   display: flex;
   flex-direction: column;

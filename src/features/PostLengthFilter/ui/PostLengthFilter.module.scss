@@ -43,13 +43,14 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
+  background-color: var(--card);
   color: var(--foreground);
   outline: none;
   transition: all 0.3s ease-in-out;
 
   &:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 2px var(--primary-20);
   }
 }
 

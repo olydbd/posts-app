@@ -8,9 +8,24 @@ export const UserAlbums = () => {
   const { id } = useParams();
   const { data: albums, isError, isLoading } = useGetAlbumsByUserIdQuery(id ?? skipToken);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError || !albums) return <p>Error</p>;
-  if (albums.length === 0) return <p>No albums found</p>;
+  if (isLoading)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Loading albums...</p>
+      </div>
+    );
+  if (isError || !albums)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Error</p>
+      </div>
+    );
+  if (albums.length === 0)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>No albums found</p>
+      </div>
+    );
 
   return (
     <div className={styles.albums}>
