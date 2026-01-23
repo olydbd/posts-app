@@ -1,3 +1,14 @@
+.state {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--muted-foreground);
+
+  .stateText {
+    font-size: 14px;
+  }
+}
+
 .section {
   background-color: var(--background);
 }
@@ -20,6 +31,8 @@
 
   color: var(--foreground);
   transition: background-color 0.3s ease-in-out;
+
+  cursor: pointer;
 
   svg {
     width: 16px;
@@ -91,8 +104,6 @@
 }
 
 .follow {
-  font-family: 'Montserrat', sans-serif;
-
   padding: 8px 16px;
   border-radius: 100px;
   border: none;
@@ -101,10 +112,10 @@
   color: var(--primary-foreground);
 
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.9;
+    color: var(--muted);
   }
 }
 

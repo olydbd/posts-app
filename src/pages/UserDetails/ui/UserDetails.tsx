@@ -1,5 +1,6 @@
 import { useGetUserByIdQuery } from '@entities/user';
 import { skipToken } from '@reduxjs/toolkit/query/react';
+import { Button } from '@shared/ui/Button';
 import {
   ArrowLeft,
   Briefcase,
@@ -13,29 +14,35 @@ import {
   Phone,
   User,
 } from 'lucide-react';
-import { Link, NavLink, Outlet, useParams } from 'react-router';
+import { NavLink, Outlet, useNavigate, useParams } from 'react-router';
 
 import styles from './UserDetails.module.scss';
 
 export const UserDetails = () => {
   const { id } = useParams();
   const { data: user, isError, isLoading } = useGetUserByIdQuery(id ?? skipToken);
+  const navigate = useNavigate();
 
-  if (isLoading) {
-    return <p className={styles.state}>Loading...</p>;
-  }
-
-  if (isError || !user) {
-    return <p className={styles.state}>Error</p>;
-  }
+  if (isLoading)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Loading user...</p>
+      </div>
+    );
+  if (isError || !user)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Error</p>
+      </div>
+    );
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <Link to="/users" className={styles.backLink}>
+        <div onClick={() => navigate(-1)} className={styles.backLink}>
           <ArrowLeft />
-          Back to Users
-        </Link>
+          Back
+        </div>
 
         <article className={styles.card}>
           <div className={styles.cover} />
@@ -51,9 +58,7 @@ export const UserDetails = () => {
                 <p className={styles.username}>@{user.username}</p>
               </div>
 
-              <button type="button" className={styles.follow}>
-                Follow
-              </button>
+              <Button className={styles.follow}>Follow</Button>
             </header>
 
             <section className={styles.contacts}>

@@ -4,7 +4,6 @@ import { usePosts } from '@features/PostList';
 import { PostListWithLoading } from '@widgets/PostList';
 import { Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router';
 
 import styles from './Posts.module.scss';
 
@@ -40,7 +39,6 @@ export const Posts = () => {
           <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
         </div>
       </div>
-      <Outlet />
     </section>
   );
 };
