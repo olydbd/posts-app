@@ -1,4 +1,5 @@
-import { useGetAlbumPhotosByAlbumIdQuery } from '@entities/album';
+import { useGetPhotosByAlbumIdQuery } from '@entities/photo';
+import { PhotoCard } from '@entities/photo/ui/PhotoCard';
 import { skipToken } from '@reduxjs/toolkit/query/react';
 import { Camera } from 'lucide-react';
 import { useParams } from 'react-router';
@@ -15,7 +16,7 @@ export interface AlbumPhotos {
 
 export const ALbumPhotos = () => {
   const { id } = useParams();
-  const { data: photos, isError, isLoading } = useGetAlbumPhotosByAlbumIdQuery(id ?? skipToken);
+  const { data: photos, isError, isLoading } = useGetPhotosByAlbumIdQuery(id ?? skipToken);
 
   return (
     <section className={styles.section}>
@@ -45,26 +46,7 @@ export const ALbumPhotos = () => {
         {photos && (
           <div className={styles.gallery}>
             {photos.map((photo) => (
-              <div key={photo.id} className={styles.item}>
-                <img
-                  src={`https://picsum.photos/seed/${photo.id}/300/300`}
-                  alt={photo.title}
-                  className={styles.image}
-                />
-
-                <div className={styles.overlay} />
-
-                <div className={styles.info}>
-                  <a
-                    href={`https://picsum.photos/seed/${photo.id}/300/300`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.link}
-                  >
-                    {photo.title}
-                  </a>
-                </div>
-              </div>
+              <PhotoCard key={photo.id} {...photo} />
             ))}
           </div>
         )}

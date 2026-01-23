@@ -12,7 +12,7 @@ export const PostList = ({ posts }: PostListProps) => {
     return (
       <div className={styles.emptyState}>
         <p className={styles.emptyStateText}>No posts match your filter criteria.</p>
-        <p className={styles.emptyStateHint}>Try increasing the maximum title length.</p>
+        <p className={styles.emptyStateHint}>Try decreasing the minimum title length.</p>
       </div>
     );
   }

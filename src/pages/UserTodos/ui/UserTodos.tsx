@@ -1,5 +1,6 @@
 import { TodoCard, useGetTodosByUserIdQuery } from '@entities/todo';
 import { skipToken } from '@reduxjs/toolkit/query/react';
+import { ItemList } from '@shared/ui/ItemList';
 import { useParams } from 'react-router';
 
 import styles from './UserTodos.module.scss';
@@ -27,11 +28,5 @@ export const UserTodos = () => {
       </div>
     );
 
-  return (
-    <div className={styles.todos}>
-      {todos.map((todo) => (
-        <TodoCard key={todo.id} {...todo} />
-      ))}
-    </div>
-  );
+  return <ItemList items={todos} renderItem={(todo) => <TodoCard {...todo} />} />;
 };

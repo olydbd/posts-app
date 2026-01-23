@@ -30,25 +30,5 @@ export const CommentList = ({ comments }: CommentListProps) => {
           </div>
         ))}
     </>
-    // <div>
-    //   <button type="button" onClick={handleToggleComments} className={styles.button}>
-    //     {open ? 'Close comments' : 'Open comments'}
-    //   </button>
-
-    //   <div className={`${styles.container} ${open ? styles.open : ''}`}>
-    //     {isLoading && <p>Loading...</p>}
-    //     {comments && (
-    //       <div className={styles.scroll}>
-    //         {comments.map((comment) => (
-    //           <div key={comment.id} className={styles.content}>
-    //             <p className={styles.name}>{comment.name}</p>
-    //             <p className={styles.email}>{comment.email}</p>
-    //             <p className={styles.body}>{comment.body}</p>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     )}
-    //   </div>
-    // </div>
   );
 };
