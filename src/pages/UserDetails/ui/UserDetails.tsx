@@ -14,14 +14,13 @@ import {
   Phone,
   User,
 } from 'lucide-react';
-import { NavLink, Outlet, useNavigate, useParams } from 'react-router';
+import { Link, NavLink, Outlet, useParams } from 'react-router';
 
 import styles from './UserDetails.module.scss';
 
 export const UserDetails = () => {
   const { id } = useParams();
   const { data: user, isError, isLoading } = useGetUserByIdQuery(id ?? skipToken);
-  const navigate = useNavigate();
 
   if (isLoading)
     return (
@@ -39,10 +38,10 @@ export const UserDetails = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div onClick={() => navigate(-1)} className={styles.backLink}>
+        <Link to="/users" className={styles.backLink}>
           <ArrowLeft />
-          Back
-        </div>
+          Back to Users
+        </Link>
 
         <article className={styles.card}>
           <div className={styles.cover} />
