@@ -1,6 +1,13 @@
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
   padding: 20px;
-  background-color: var(--background);
+  background-color: var(--card-80);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 
   p {
@@ -17,9 +24,37 @@
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--foreground);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  &:hover .logoIcon {
+    transform: scale(1.05);
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    transition: transform 0.3s ease;
+
+    .logoIconSvg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .logoText {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--foreground);
+  }
 }
 
 .buttons {
@@ -27,4 +62,112 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.aboutButton {
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--foreground);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  .aboutButtonIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+}
+
+.modalHeader {
+  margin-bottom: 24px;
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.modalDescription {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modalBodyTitle {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureCard {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+}
+
+.featureTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.featureDescription {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techBadge {
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 14px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  cursor: default;
+}
+
+.modalFooter {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background-color: var(--muted-50);
+
+  p {
+    font-size: 14px;
+    color: var(--muted-foreground);
+  }
 }

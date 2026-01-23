@@ -1,5 +1,4 @@
 .section {
-  padding: 20px;
   background-color: var(--background);
   min-height: 100vh;
   display: flex;
@@ -10,14 +9,18 @@
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .content {
+  max-width: 640px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
+  text-align: center;
 }
 
 .code {
@@ -39,14 +42,28 @@
 }
 
 .link {
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: none;
+
+  background-color: var(--primary);
   color: var(--primary-foreground);
-  background: var(--primary);
-  transition: opacity 0.3s ease-in-out;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.9;
+    color: var(--muted);
+    background-color: var(--accent);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
   }
 }

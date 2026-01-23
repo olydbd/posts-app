@@ -1,42 +1,117 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--overlay);
+.state {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--muted-foreground);
+
+  .stateText {
+    font-size: 14px;
+  }
 }
 
-.content {
-  margin: 0 6px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  gap: 10px;
-  padding: 40px;
+.section {
   background-color: var(--background);
-  color: var(--foreground);
-  border-radius: 12px;
 }
 
-.title {
-  color: var(--foreground);
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.body {
-  color: var(--foreground);
-  max-width: 768px;
-}
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
 
-.close {
-  position: absolute;
-  top: -18px;
-  right: -18px;
-  color: var(--primary-foreground);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 14px;
+
+  color: var(--foreground);
+  transition: background-color 0.3s ease-in-out;
+
   cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background-color: var(--accent);
+  }
+}
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 16px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--card);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.userLeft {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--primary-10);
+  color: var(--primary);
+  box-shadow: 0 0 0 4px var(--background);
+  transition: box-shadow 0.3s ease-in-out;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.name {
+  color: var(--foreground);
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+}
+
+.username {
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+
+.view {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  transition: color 0.3s ease-in-out;
+}
+
+.userBlock:hover .avatar {
+  box-shadow: 0 0 0 4px var(--accent);
+}
+
+.userBlock:hover .name {
+  color: var(--primary);
+}
+
+.userBlock:hover .view {
+  color: var(--primary);
 }

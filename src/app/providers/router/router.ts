@@ -24,8 +24,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'posts',
-        Component: Posts,
         children: [
+          {
+            index: true,
+            Component: Posts,
+          },
           {
             path: ':id',
             Component: PostDetails,

@@ -9,9 +9,24 @@ export const UserPosts = () => {
   const { id } = useParams();
   const { data: posts, isError, isLoading } = useGetPostsByUserIdQuery(id ?? skipToken);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError || !posts) return <p>Error</p>;
-  if (posts.length === 0) return <p>No posts found</p>;
+  if (isLoading)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Loading posts...</p>
+      </div>
+    );
+  if (isError || !posts)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>Error</p>
+      </div>
+    );
+  if (posts.length === 0)
+    return (
+      <div className={styles.state}>
+        <p className={styles.stateText}>No posts found</p>
+      </div>
+    );
 
   return (
     <div className={styles.container}>

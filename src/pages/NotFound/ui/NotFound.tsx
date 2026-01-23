@@ -1,3 +1,4 @@
+import { Home } from 'lucide-react';
 import { Link } from 'react-router';
 
 import styles from './NotFound.module.scss';
@@ -8,12 +9,14 @@ export const NotFound = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <span className={styles.code}>404</span>
-          <h1 className={styles.title}>Page Not Found</h1>
+          <h1 className={styles.title}>Oops! Page Not Found</h1>
           <p className={styles.description}>
-            The page you&apos;re looking for doesn&apos;t exist or has been moved.
+            The page you&apos;re looking for seems to have wandered off. Don&apos;t worry, even the
+            best explorers get lost sometimes.
           </p>
           <Link to="/" className={styles.link}>
-            Go to home
+            <Home />
+            Back to Home
           </Link>
         </div>
       </div>

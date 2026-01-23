@@ -1,19 +1,77 @@
 .section {
-  padding: 20px;
   background-color: var(--background);
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 100px;
+  background-color: var(--primary-10);
+}
+
+.iconImage {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
 }
 
 .title {
+  font-size: 30px;
+  font-weight: bold;
   color: var(--foreground);
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+
+.errorState {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--muted-foreground);
+
+  .errorStateText {
+    font-size: 14px;
+  }
+}
+
+.loadingState {
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  color: var(--muted-foreground);
+
+  .loadingStateText {
+    font-size: 14px;
+  }
 }
 
 .users {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

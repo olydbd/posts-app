@@ -2,19 +2,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 
   .navLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 100px;
+
+    font-size: 14px;
     color: var(--foreground);
-    transition: color 0.3s ease-in-out;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
 
     &:hover {
-      color: var(--accent-foreground);
+      background-color: var(--accent);
+    }
+
+    .navIcon {
+      width: 16px;
+      height: 16px;
     }
   }
 
   .active {
-    color: var(--muted-foreground);
-    pointer-events: none;
+    background-color: var(--accent);
+    color: var(--accent-foreground);
   }
 }

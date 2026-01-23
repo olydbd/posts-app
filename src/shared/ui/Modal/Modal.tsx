@@ -1,6 +1,8 @@
-import type { MouseEvent, ReactNode } from 'react';
+import { X } from 'lucide-react';
+import { type MouseEvent, type ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
+import { Button } from '../Button';
 import styles from './Modal.module.scss';
 
 interface ModalProps {
@@ -10,6 +12,18 @@ interface ModalProps {
 }
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleContentClick = (e: MouseEvent<HTMLDivElement>) => {
@@ -19,6 +33,9 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.content} onClick={handleContentClick}>
+        <Button onClick={onClose} className={styles.closeButton}>
+          <X />
+        </Button>
         {children}
       </div>
     </div>,

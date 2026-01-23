@@ -1,6 +1,100 @@
 .footer {
+  background-color: var(--primary);
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  background-color: var(--card-80);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
   padding: 20px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
   background-color: var(--primary);
   color: var(--primary-foreground);
-  margin-top: auto;
+}
+
+.logoIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.logoText {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--foreground);
+  cursor: default;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--muted-foreground);
+
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+.made {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+
+.iconHeart {
+  width: 16px;
+  height: 16px;
+
+  fill: var(--primary);
+  color: var(--primary);
+}
+
+.bottom {
+  margin-top: 24px;
+  padding-top: 24px;
+
+  border-top: 1px solid var(--border);
+
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted-foreground);
 }
