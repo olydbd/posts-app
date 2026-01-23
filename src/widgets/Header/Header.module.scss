@@ -84,3 +84,90 @@
     margin-right: 8px;
   }
 }
+
+.modalHeader {
+  margin-bottom: 24px;
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.modalDescription {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modalBodyTitle {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featureCard {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+}
+
+.featureTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.featureDescription {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techBadge {
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 14px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  cursor: default;
+}
+
+.modalFooter {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background-color: var(--muted-50);
+
+  p {
+    font-size: 14px;
+    color: var(--muted-foreground);
+  }
+}
