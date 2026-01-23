@@ -1,39 +1,101 @@
 .section {
+  background-color: var(--background);
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: var(--background);
+  align-items: center;
 }
 
 .container {
-  padding: 24px;
-  width: 100%;
-  max-width: 480px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.card {
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: var(--shadow-sm);
+.content {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   text-align: center;
 }
 
+.error {
+  font-size: 96px;
+  font-weight: bold;
+  color: var(--primary);
+  opacity: 0.15;
+}
+
 .title {
-  margin-bottom: 12px;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: bold;
   color: var(--foreground);
 }
 
 .description {
-  margin-bottom: 24px;
+  font-size: 16px;
   color: var(--muted-foreground);
-  line-height: 1.5;
 }
 
 .actions {
   display: flex;
-  gap: 12px;
+  gap: 16px;
+}
+
+.reloadButton {
+  display: flex;
+  align-items: center;
   justify-content: center;
+
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: none;
+
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--muted);
+    background-color: var(--accent);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+  border-radius: 100px;
+
+  background-color: transparent;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--foreground);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
 }

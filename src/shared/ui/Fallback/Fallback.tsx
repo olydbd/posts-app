@@ -1,3 +1,4 @@
+import { Home, RefreshCcw } from 'lucide-react';
 import { isRouteErrorResponse, useNavigate, useRouteError } from 'react-router';
 
 import { Button } from '../Button';
@@ -21,12 +22,19 @@ export const Fallback = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.card}>
+        <div className={styles.content}>
+          <span className={styles.error}>Error</span>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.description}>{description}</p>
           <div className={styles.actions}>
-            <Button onClick={() => navigate(-1)}>Go back</Button>
-            <Button onClick={() => window.location.reload()}>Reload page</Button>
+            <Button onClick={() => window.location.reload()} className={styles.reloadButton}>
+              <RefreshCcw />
+              Try Again
+            </Button>
+            <Button onClick={() => navigate('/')} className={styles.backButton}>
+              <Home />
+              Back to Home
+            </Button>
           </div>
         </div>
       </div>
