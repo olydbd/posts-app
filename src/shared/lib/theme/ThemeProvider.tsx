@@ -1,9 +1,9 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type PropsWithChildren, useEffect, useState } from 'react';
 
 import { ThemeContext } from './ThemeContext';
 import type { ThemeMode } from './types';
 
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const [theme, setTheme] = useState<ThemeMode>('light');
 
   useEffect(() => {
