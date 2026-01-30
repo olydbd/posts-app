@@ -1,5 +1,5 @@
 import { X } from 'lucide-react';
-import { type MouseEvent, type ReactNode, useEffect } from 'react';
+import { type MouseEvent, type PropsWithChildren, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Button } from '../Button';
@@ -8,10 +8,9 @@ import styles from './Modal.module.scss';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children: ReactNode;
 }
 
-export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+export const Modal = ({ isOpen, onClose, children }: PropsWithChildren<ModalProps>) => {
   useEffect(() => {
     if (!isOpen) return;
 
@@ -43,15 +42,15 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   );
 };
 
-const ModalHeader = ({ children }: { children: ReactNode }) => {
+const ModalHeader = ({ children }: PropsWithChildren) => {
   return <div className={styles.header}>{children}</div>;
 };
 
-const ModalBody = ({ children }: { children: ReactNode }) => {
+const ModalBody = ({ children }: PropsWithChildren) => {
   return <div className={styles.body}>{children}</div>;
 };
 
-const ModalFooter = ({ children }: { children: ReactNode }) => {
+const ModalFooter = ({ children }: PropsWithChildren) => {
   return <div className={styles.footer}>{children}</div>;
 };
 
